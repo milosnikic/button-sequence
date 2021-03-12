@@ -5,6 +5,7 @@
 #define BUTTON3 6
 #define BUTTON4 7
 #define BUTTON5 8
+#define OUTPUT_PIN 9
 #define DATA_PIN     3
 #define NUM_LEDS    11
 #define LED_TYPE    WS2812B
@@ -109,7 +110,7 @@ void checkIfButtonIsPressedWithDebounce(void * pvParameters) {
                 button5FirstTimePressed = false;
                 // This is condition that all buttons are pressed in specified sequence, so the task is completed
                 shineLedTapeCompleted();
-                while (1) {}
+                digitalWrite(OUTPUT_PIN, HIGH);
               } else {
                 resetAll();
               }
@@ -128,6 +129,8 @@ void buttonSetup() {
   pinMode(BUTTON3, INPUT);
   pinMode(BUTTON4, INPUT);
   pinMode(BUTTON5, INPUT);
+  pinMode(OUTPUT_PIN, OUTPUT);
+  digitalWrite(OUTPUT_PIN, LOW);
   digitalWrite(BUTTON1, HIGH);
   digitalWrite(BUTTON2, HIGH);
   digitalWrite(BUTTON3, HIGH);
@@ -177,6 +180,7 @@ void resetAll() {
   button3FirstTimePressed = true;
   button4FirstTimePressed = true;
   button5FirstTimePressed = true;
+  digitalWrite(OUTPUT_PIN, LOW);
   turnOffLedTape();
 }
 
