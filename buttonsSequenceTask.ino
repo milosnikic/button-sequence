@@ -27,6 +27,12 @@ bool button5Pressed = false;
 bool button5FirstTimePressed = true;
 
 void setup() {
+  // ---------------------------------------------------------------------
+  //
+  //                        3 -> 1 -> 2 -> 4 -> 5
+  //                            RIGHT SEQUENCE
+  //
+  // ---------------------------------------------------------------------
   buttonSetup();
   resetAll();
   Serial.begin(9600);
