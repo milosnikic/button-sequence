@@ -70,7 +70,6 @@ void checkIfButtonIsPressedWithDebounce(void * pvParameters) {
                 // Button 1 is pressed and proceed
                 button1FirstTimePressed = false;
                 button1Pressed = true;
-                shineSecondButtonPressed();
               } else {
                 resetAll();
               }
@@ -81,7 +80,6 @@ void checkIfButtonIsPressedWithDebounce(void * pvParameters) {
                 // Button 2 is pressed and proceed
                 button2Pressed = true;
                 button2FirstTimePressed = false;
-                shineThirdButtonPressed();
               } else {
                 resetAll();
               }
@@ -92,7 +90,6 @@ void checkIfButtonIsPressedWithDebounce(void * pvParameters) {
                 // Button 3 is pressed and proceed
                 button3Pressed = true;
                 button3FirstTimePressed = false;
-                shineFirstButtonPressed();
               } else {
                 resetAll();
               }
@@ -103,7 +100,6 @@ void checkIfButtonIsPressedWithDebounce(void * pvParameters) {
                 // Button 4 is pressed and proceed
                 button4Pressed = true;
                 button4FirstTimePressed = false;
-                shineFourthButtonPressed();
               } else {
                 resetAll();
               }
@@ -142,30 +138,6 @@ void buttonSetup() {
   digitalWrite(BUTTON3, HIGH);
   digitalWrite(BUTTON4, HIGH);
   digitalWrite(BUTTON5, HIGH);
-}
-
-void shineFirstButtonPressed() {
-  //Simulate first button pressed shine
-  Serial.println("First sequence button pressed");
-  shineOneColor(0, 50, 0);
-}
-
-void shineSecondButtonPressed() {
-  //Simulate second button pressed shine
-  Serial.println("Second sequence button pressed");
-  shineOneColor(0, 100, 0);
-}
-
-void shineThirdButtonPressed() {
-  //Simulate third button pressed shine
-  Serial.println("Third sequence button pressed");
-  shineOneColor(0, 150, 0);
-}
-
-void shineFourthButtonPressed() {
-  //Simulate fourth button pressed shine
-  Serial.println("Fourth sequence button pressed");
-  shineOneColor(0, 200, 0);
 }
 
 void shineLedTapeCompleted() {
